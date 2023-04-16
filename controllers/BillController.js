@@ -10,10 +10,11 @@ module.exports = {
 
             let { co_st_id, b_date, b_time, sum } = req.body;
 
-            const result= await Bill.create({
+            const result = await Bill.create({
                 co_st_id,
                 b_date,
-                b_time, sum
+                b_time,
+                sum
             });
             res.status(httpStatus.OK).json({ result: result });
 

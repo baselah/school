@@ -152,10 +152,9 @@ module.exports = {
 
         try {
             let { co_id, st_id, paid, remained, cs_price, finished } = req.body;
-            const course = await Course.findByPk(co_id);
             const student = await Student.findByPk(st_id);
 
-            const result = await student.addCourse(course, {
+            const result = await student.addCourse(co_id, {
                 through: {
                     paid,
                     remained,
@@ -174,10 +173,9 @@ module.exports = {
 
         try {
             let { cl_id, st_id, } = req.body;
-            const classs = await Class.findByPk(cl_id);
             const student = await Student.findByPk(st_id);
 
-            const result = await student.addClass(classs);
+            const result = await student.addClass(cl_id);
 
             res.status(httpStatus.OK).json({ result: result });
 
@@ -192,10 +190,9 @@ module.exports = {
 
         try {
             let { st_id, l_id, in_check } = req.body;
-            const lesson = await Lesson.findByPk(l_id);
             const student = await Student.findByPk(st_id);
 
-            const result = await student.addLesson(lesson, {
+            const result = await student.addLesson(l_id, {
                 through: {
                     in_check,
                 }

@@ -46,8 +46,7 @@ module.exports = {
             let { l_id, cl_id } = req.body;
 
             const classs = await Class.findByPk(cl_id);
-            const lesson = await Lesson.findByPk(l_id);
-            const result = await classs.addLesson(lesson);
+            const result = await classs.addLesson(l_id);
 
             res.status(httpStatus.CREATED).json({ result: result });
 

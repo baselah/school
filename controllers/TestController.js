@@ -37,10 +37,9 @@ module.exports = {
         try {
 
             const test = await Test.findByPk(test_id);
-            const classs = await Class.findByPk(cl_id);
 
 
-            const result = await test.addClass(classs);
+            const result = await test.addClass(cl_id);
 
             res.status(httpStatus.OK).json({ result: "Test add to class successfully" });
 
@@ -54,10 +53,9 @@ module.exports = {
 
         try {
             let { test_id, st_id, mark } = req.body;
-            const student = await Student.findByPk(st_id);
             const test = await Test.findByPk(test_id);
 
-            const result = await test.addStudent(student, { through: { mark: mark } });
+            const result = await test.addStudent(st_id, { through: { mark: mark } });
 
             res.status(httpStatus.OK).json({ result: "Mark add successfully" });
 
@@ -72,10 +70,9 @@ module.exports = {
 
         try {
             let { test_id, st_id, mark } = req.body;
-            const student = await Student.findByPk(st_id);
             const test = await Test.findByPk(test_id);
 
-            const result = await test.addStudents(student, { through: { mark: mark } });
+            const result = await test.addStudents(st_id, { through: { mark: mark } });
 
             res.status(httpStatus.OK).json({ result: result });
 

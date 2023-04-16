@@ -48,9 +48,8 @@ module.exports = {
             let { no_id, st_id } = req.body;
 
             const student = await Student.findByPk(st_id);
-            const notification = await Notification.findByPk(no_id);
 
-            const result = await student.addNotification(notification);
+            const result = await student.addNotification(no_id);
 
             res.status(httpStatus.OK).json({ result: result });
 
