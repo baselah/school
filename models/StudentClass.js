@@ -1,23 +1,23 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/data')
+const sequelize = require('../util/database')
 
-const StudentClass = sequelize.define('st_cl', {
+const StudentClass = sequelize.define('student_class', {
     // Model attributes are defined here
-    st_cl_id: {
+    id: {
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
     },
-    st_id: {
-        type: DataTypes.INTEGER,
+    student_id: {
+        type: DataTypes.BIGINT,
     },
-    cl_id: {
-        type: DataTypes.INTEGER,
+    class_id: {
+        type: DataTypes.BIGINT,
     },
 }, {
     // Other model options go here
     freezeTableName: true,
-    tableName: 'st_cl',
+    tableName: 'student_class',
     timestamps: false,
 });
 

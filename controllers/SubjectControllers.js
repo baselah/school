@@ -1,6 +1,6 @@
 const subject = require('../models/Subject');
-const sequelize = require('../util/data');
-const httpStatus = require('../util/httpStatus');
+const sequelize = require('../util/database');
+const httpStatus = require("http-status");
 
 module.exports = {
 

@@ -1,34 +1,34 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/data');
+const { DataTypes } = require("sequelize");
+const sequelize = require("../util/database");
 
-
-const Bill = sequelize.define('bill', {
+const Bill = sequelize.define(
+  "bill",
+  {
     // Model attributes are defined here
-    b_id: {
-        autoIncrement: true,
-        primaryKey: true,
-        type: DataTypes.BIGINT,
+    id: {
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.BIGINT,
     },
     co_st_id: {
-        type: DataTypes.BIGINT,
+      type: DataTypes.BIGINT,
     },
-    b_date: {
-        type: DataTypes.DATE,
+    date: {
+      type: DataTypes.DATE,
     },
-    b_time: {
-        type: DataTypes.TIME,
-
+    time: {
+      type: DataTypes.TIME,
     },
-    sum:{
-        type: DataTypes.INTEGER,
-    }
-
-}, {
+    total: {
+      type: DataTypes.DOUBLE,
+    },
+  },
+  {
     // Other model options go here
     freezeTableName: true,
-    tableName: 'bill',
+    tableName: "bills",
     timestamps: false,
-},
+  }
 );
 
 module.exports = Bill;

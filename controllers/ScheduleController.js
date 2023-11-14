@@ -1,5 +1,5 @@
 const Schedule = require('../models/Schedule');
-const httpStatus = require('../util/httpStatus');
+const httpStatus = require("http-status");
 
 module.exports = {
 

@@ -1,21 +1,21 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/data');
+const sequelize = require('../util/database');
 
 
 const Note = sequelize.define('note', {
 
-    note_id: {
+    id: {
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.BIGINT,
     },
-    note_date: {
+    date: {
         type: DataTypes.DATE,
     },
-    note_time: {
+    time: {
         type: DataTypes.TIME,
     },
-    note_content: {
+    content: {
         type: DataTypes.TEXT,
     },
 
@@ -24,7 +24,7 @@ const Note = sequelize.define('note', {
     // Other model options go here
     freezeTableName: true,
     tableName: 'note',
-    timestamps: false,
+    timestamps: true,
 },);
 
 

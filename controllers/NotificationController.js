@@ -1,6 +1,6 @@
 const Notification = require('../models/Notification');
 const Student = require('../models/Student');
-const httpStatus = require('../util/httpStatus');
+const httpStatus = require("http-status");
 
 
 module.exports = {

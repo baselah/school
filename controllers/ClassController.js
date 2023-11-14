@@ -1,6 +1,6 @@
 const Course = require('../models/Course');
 const Class = require('../models/Class');
-const httpStatus = require('../util/httpStatus');
+const httpStatus = require("http-status");
 
 
 module.exports = {

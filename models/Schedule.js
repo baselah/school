@@ -1,8 +1,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/data');
+const sequelize = require('../util/database');
 
 const Schedule = sequelize.define('schedule', {
-    sch_id: {
+    id: {
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.BIGINT,
@@ -10,10 +10,10 @@ const Schedule = sequelize.define('schedule', {
     period_check: {
         type: DataTypes.INTEGER,
     },
-    s_time: {
+    start_time: {
         type: DataTypes.TIME,
     },
-    e_time: {
+    end_time: {
         type: DataTypes.TIME,
         allowNull : true,
     },
@@ -23,7 +23,7 @@ const Schedule = sequelize.define('schedule', {
     sch_date:{
         type : DataTypes.DATE,
     },
-    cl_id :{
+    class_id :{
         type : DataTypes.BIGINT,
     }
 

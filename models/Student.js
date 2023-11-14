@@ -1,32 +1,32 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/data')
+const sequelize = require('../util/database')
 
 const Student = sequelize.define('student', {
     // Model attributes are defined here
-    st_id: {
+    id: {
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER,
     },
-    st_name: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    st_password: {
+    password: {
         type: DataTypes.STRING
     },
-    st_phone: {
+    phone: {
         type: DataTypes.TEXT,
     }
 }, {
     // Other model options go here
     freezeTableName: true,
     tableName: 'student',
-    timestamps: false,
+    timestamps: true,
     indexes: [
         {
             unique: true,
-            fields: ['st_name', 'st_phone'],
+            fields: ['name', 'phone'],
         },
     ],
 });

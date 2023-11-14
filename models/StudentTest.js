@@ -1,32 +1,34 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/data')
+const { Sequelize, DataTypes } = require("sequelize");
+const sequelize = require("../util/database");
 
-const StudentTest = sequelize.define('st_test', {
-    st_test_id: {
-        autoIncrement: true,
-        primaryKey: true,
-        type: DataTypes.INTEGER,
+const StudentTest = sequelize.define(
+  "student_test",
+  {
+    id: {
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.BIGINT,
     },
-    st_id: {
-        type: DataTypes.INTEGER,
+    student_id: {
+      type: DataTypes.BIGINT,
     },
     test_id: {
-        type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
     },
     mark: {
-        type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
     },
     passed: {
-        type: DataTypes.INTEGER,
-        defaultValue: 0,
-    }
-
-}, {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
+  },
+  {
     // Other model options go here
     freezeTableName: true,
-    tableName: 'st_test',
+    tableName: "student_test",
     timestamps: false,
-},
+  }
 );
 
 module.exports = StudentTest;

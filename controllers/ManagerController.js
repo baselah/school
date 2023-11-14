@@ -1,5 +1,5 @@
 const manager = require('../models/Manager');
-const httpStatus = require('../util/httpStatus');
+const httpStatus = require("http-status");
 
 module.exports = {
 

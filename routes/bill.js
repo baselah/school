@@ -1,9 +1,7 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const billController = require('../controllers/BillController');
+const billController = require("../controllers/BillController");
 
-
-router.post('/create', billController.addBill);
-
+router.post("/create", billController.addBill);
 
 module.exports = router;

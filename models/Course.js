@@ -1,32 +1,28 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/data')
+const sequelize = require('../util/database')
 
 const Course = sequelize.define('course', {
     // Model attributes are defined here
-    co_id: {
+    id: {
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.BIGINT,
     },
-    co_price: {
+    price: {
         type: DataTypes.BIGINT,
     },
-    co_details: {
+    details: {
         type: DataTypes.STRING,
     },
-    s_id: {
+    subject_id: {
         type: DataTypes.BIGINT,
-        references: {
-            model: 'subject',
-            key: 's_id',
-        }
     }
 
 }, {
     // Other model options go here
     freezeTableName: true,
     tableName: 'course',
-    timestamps: false,
+    timestamps: true,
 },
 );
 

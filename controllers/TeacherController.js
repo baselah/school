@@ -1,5 +1,5 @@
 const teacher = require('../models/Teacher');
-const httpStatus = require('../util/httpStatus');
+const httpStatus = require("http-status");
 
 
 module.exports = {

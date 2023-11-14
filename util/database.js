@@ -1,17 +1,22 @@
 //const mysql = require("mysql");
 
-const { Sequelize } = require('sequelize');
+const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize('timeengc_institution', 'root', '', {
-  host: 'localhost',
-  dialect: 'mysql'
-});
+const sequelize = new Sequelize(
+  process.env.DATABASENAME,
+  process.env.DATABASEUSER,
+  process.env.DATABASEPASSWORD,
+  {
+    host: "localhost",
+    dialect: "mysql",
+  }
+);
 
 try {
   sequelize.authenticate();
-  console.log('Connection has been established successfully.');
+  console.log("Connection has been established successfully.");
 } catch (error) {
-  console.error('Unable to connect to the database:', error);
+  console.error("Unable to connect to the database:", error);
 }
 
 module.exports = sequelize;

@@ -1,5 +1,5 @@
 const Note = require('../models/Note');
-const httpStatus = require('../util/httpStatus');
+const httpStatus = require("http-status");
 
 
 

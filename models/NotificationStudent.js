@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/data');
+const sequelize = require('../util/database');
 
 
 const NotificationStudent = sequelize.define('notification_student', {
@@ -24,7 +24,7 @@ const NotificationStudent = sequelize.define('notification_student', {
     // Other model options go here
     freezeTableName: true,
     tableName: 'notification_student',
-    timestamps: false,
+    timestamps: true,
 },);
 
 

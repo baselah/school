@@ -1,26 +1,23 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/data')
+const sequelize = require('../util/database')
 
-const StudentCourse = sequelize.define('co_st', {
+const StudentCourse = sequelize.define('student_course', {
     // Model attributes are defined here
-    co_st_id: {
+    id: {
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
     },
-    co_id: {
-        type: DataTypes.INTEGER,
+    course_id: {
+        type: DataTypes.BIGINT,
     },
-    st_id: {
-        type: DataTypes.INTEGER,
+    student_id: {
+        type: DataTypes.BIGINT,
     },
     paid: {
         type: DataTypes.INTEGER,
     },
     remained: {
-        type: DataTypes.INTEGER,
-    },
-    cs_price: {
         type: DataTypes.INTEGER,
     },
     finished: {
@@ -29,7 +26,7 @@ const StudentCourse = sequelize.define('co_st', {
 }, {
     // Other model options go here
     freezeTableName: true,
-    tableName: 'co_st',
+    tableName: 'student_course',
     timestamps: false,
 });
 

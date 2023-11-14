@@ -1,18 +1,18 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/data')
+const {  DataTypes } = require('sequelize');
+const sequelize = require('../util/database')
 
 const Manager = sequelize.define('manager', {
     // Model attributes are defined here
-    m_id: {
+    id: {
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
     },
-    m_username: {
+    username: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    m_password: {
+    password: {
         type: DataTypes.STRING
     },
     admin: {
@@ -26,7 +26,7 @@ const Manager = sequelize.define('manager', {
     indexes: [
         {
             unique: true,
-            fields: ['m_username'],
+            fields: ['username'],
         },
     ],
 },

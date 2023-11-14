@@ -1,23 +1,23 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/data');
+const sequelize = require('../util/database');
 
 const Lesson = sequelize.define('lesson', {
 
-    l_id: {
+    id: {
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.BIGINT,
     },
-    l_date: {
+    date: {
         type: DataTypes.DATE,
     },
-    l_day: {
+    day: {
         type: DataTypes.STRING,
     },
-    l_s_time: {
+    start_time: {
         type: DataTypes.TIME,
     },
-    l_e_time: {
+    end_time: {
         type: DataTypes.TIME,
     }
 

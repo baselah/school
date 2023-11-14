@@ -1,27 +1,27 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/data')
+const sequelize = require('../util/database')
 
 const Subject = sequelize.define('subject', {
     // Model attributes are defined here
-    s_id:{
+    id:{
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
     },
-    s_name: {
+    name: {
       type: DataTypes.STRING,
     },
     grade: {
       type: DataTypes.INTEGER
     },
-    s_details :{
+   details :{
         type:DataTypes.STRING,
     }
   }, {
     // Other model options go here
     freezeTableName: true,
     tableName: 'subject',
-    timestamps: false,
+    timestamps: true,
   });
   
   module.exports = Subject;

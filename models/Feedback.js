@@ -1,34 +1,34 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/data');
+const { DataTypes } = require("sequelize");
+const sequelize = require("../util/database");
 
-
-const Feedback = sequelize.define('feedback', {
+const Feedback = sequelize.define(
+  "feedback",
+  {
     // Model attributes are defined here
-    f_id: {
-        autoIncrement: true,
-        primaryKey: true,
-        type: DataTypes.BIGINT,
+    id: {
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.BIGINT,
     },
-    f_content: {
-        type: DataTypes.STRING,
+    content: {
+      type: DataTypes.STRING,
     },
-    f_date: {
-        type: DataTypes.DATE,
+    date: {
+      type: DataTypes.DATE,
     },
-    f_time: {
-        type: DataTypes.TIME,
+    time: {
+      type: DataTypes.TIME,
     },
-    st_id:{
-        type: DataTypes.BIGINT,
-        
-    }
-
-}, {
+    student_id: {
+      type: DataTypes.BIGINT,
+    },
+  },
+  {
     // Other model options go here
     freezeTableName: true,
-    tableName: 'feedback',
+    tableName: "feedback",
     timestamps: false,
-},
+  }
 );
 
 module.exports = Feedback;
