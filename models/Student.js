@@ -1,34 +1,40 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../util/database')
+const { Sequelize, DataTypes } = require("sequelize");
+const sequelize = require("../util/database");
+const Joi = require("joi");
 
-const Student = sequelize.define('student', {
+const Student = sequelize.define(
+  "student",
+  {
     // Model attributes are defined here
     id: {
-        autoIncrement: true,
-        primaryKey: true,
-        type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
     },
     name: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     password: {
-        type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
     phone: {
-        type: DataTypes.TEXT,
-    }
-}, {
+      type: DataTypes.TEXT,
+    },
+  },
+  {
     // Other model options go here
     freezeTableName: true,
-    tableName: 'student',
+    tableName: "student",
     timestamps: true,
     indexes: [
-        {
-            unique: true,
-            fields: ['name', 'phone'],
-        },
+      {
+        unique: true,
+        fields: ["name", "phone"],
+      },
     ],
-});
+  }
+);
 
-module.exports = Student;
+
+module.exports = Student ;

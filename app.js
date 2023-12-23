@@ -7,22 +7,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 const sequelize = require("./util/database");
 const errorHandler = require("./middlewares/errorMiddleware");
+const router = require("./routes");
+const validateRequest = require("./middlewares/validateRequest");
 
-app.use("/institute/subject", require("./routes/subject"));
-app.use("/institute/student", require("./routes/student"));
-app.use("/institute/teacher", require("./routes/teacher"));
-app.use("/institute/manager", require("./routes/manager"));
-app.use("/institute/course", require("./routes/course"));
-app.use("/institute/test", require("./routes/test"));
-app.use("/institute/feedback", require("./routes/feedback"));
-app.use("/institute/class", require("./routes/class"));
-app.use("/institute/bill", require("./routes/bill"));
-app.use("/institute/lesson", require("./routes/lesson"));
-app.use("/institute/schedule", require("./routes/schedule"));
-app.use("/institute/notification", require("./routes/notification"));
-app.use("/institute/note", require("./routes/note"));
+
+app.use(validateRequest);
 // Global error handling middleware
-
+app.use(process.env.HOSTPREFIX, router);
 // Apply global error handling middleware
 app.use(errorHandler);
 app.listen(process.env.PORT, function () {
